@@ -1,0 +1,14 @@
+Section4: プロジェクトの生成
+    ・プロジェクトの作成
+        create-react-app
+
+section5: 初めてのテスト
+    ・npm run testで実行可能である。
+              *.test.jsの拡張子を持っているファイルをテストする。
+
+section6: Jestの概要
+    ・Jestは"npm run test"で実行される。
+    ・*.test.jsを発見し、実行される。
+    ・ファイルが変更されるとまた更新される。
+
+section7: アプリの概要
