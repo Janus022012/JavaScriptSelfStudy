@@ -12,3 +12,5 @@ section6: Jestの概要
     ・ファイルが変更されるとまた更新される。
 
 section7: アプリの概要
+    ・git rm --cached -r はinit直後のaddを取り消す。
+    ・git reset HEAD は二回目以降のgit addを取り消す。
