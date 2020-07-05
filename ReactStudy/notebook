@@ -1,3 +1,5 @@
+### Advanced React and Redux
+
 Section4: プロジェクトの生成
     ・プロジェクトの作成
         create-react-app
@@ -12,5 +14,83 @@ section6: Jestの概要
     ・ファイルが変更されるとまた更新される。
 
 section7: アプリの概要
+
+section9: Reactと再設計
     ・git rm --cached -r はinit直後のaddを取り消す。
     ・git reset HEAD は二回目以降のgit addを取り消す。
+
+section10: testの対象
+    ・何をテストをすべきか
+        1. アプリケーションの個々の部分(コンポーネント)に着目する。
+        2. アプリケーションの目的を説明する。
+        3. アプリケーションの本来の動作を説明する。
+
+section11: ゼロから始める
+    ・index.jsはsrc内部に存在している必要がある。(create-react-appでプロジェクトを作成した場合)
+
+section13: Appにコンポーネントを表示する。
+    ・export defaultはファイルの中で一つのみ行う事が出来る。
+    　ファイルで唯一の存在であるため、任意の名前を付ける事が可能である。
+    ・named exportは、{}を使ってインポートする事が可能である。
+
+
+### material-ui
+section6: プロジェクトファイルとリソース
+    ◆   npm install --local?
+            ・npm
+                npmはパッケージマネージャであり、開発用のパッケージを管理するためのツールである。
+                npm initによって、npmが管理するディレクトとpackage.jsonが作成される。
+            ・セマンティックバージョン管理
+                X.Y.Z(メジャー.マイナー.パッチ)で、1が重大な変更・2が機能的な変更・3がパッチとなる。
+            ・^x.x.x
+                これはメジャーバージョンが同じx.x.x以上を使用するべきであるという事を意味する。
+                package.jsonにはこれが存在する。
+            ・package-lock.json
+                インストール時に完全に同じ環境を構築するために使用される。
+                なので、上記のようなキャレットが存在しない。
+            ・npm ciを使用しよう！
+                1. node_modules ディレクトリの削除
+                2. package-lock.json と package.json の整合性のチェック
+                3. package-lock.json から node_modules を再現
+                を実施してくれる。
+                → npm install package-lock.jsonではnpm installがpackage-lock.jsonをアップデートする可能性がある？
+
+            ・npm installはいつ使用するのか？
+                ・npm ci は package-lock.json を更新しませんし、個別にパッケージをインストールすることもできません。
+                → バージョンをアップデートする場合、npm installを使用する。これによってpackage-lock.jsonが更新される。
+
+            ・--saveは？
+                ・パッケージのインストール時、package.json の dependencies に追加してくれる機能。
+                ・しかし、npm v5移行はデフォルトになったため、付ける必要なし。
+
+            ・--save-devは？
+                ・--save-devはローカルインストール用(デフォルト)
+                ・-gはグローバルインストール用
+                ・また、--save-devと何もつけない場合の違いは、devDependenciesに入るかどうかである。
+                → devDependenciesは、開発用の依存関係であり、仮にnpm install --productionした場合にインストールされない。
+
+        (参照)
+            ・https://qiita.com/yfujii1127/items/7ca887a45e0855917279
+            ・https://blog.minimalcorp.com/users/jigen/posts/6f325dc9b8a00370b6aedf47a34cb3ce
+
+    ◆npx
+        ・npxとは？
+            npxはnpmパッケージを簡単に実行できるコマンドです。具体的には次のようなことができます。
+                ・run-scriptを使用せずにローカルインストールしたコマンドを実行する。
+                    コマンドのみ提供するパッケージは、run-scriptを使用していた。(又はnode_modules配下に移動)
+                    run-scriptとは、package.jsonのscriptsフィールドに実行したいコマンドを定義しておく事で、npm runで実行
+                    出来るというものである。
+                    → これをrun-scriptに書かなくても、自動的に使用できるようになった。
+
+                ・グローバルインストールせずに一度だけコマンドを実行する。
+                    npxコマンドをたたくと次の順番でコマンドを探す。
+                        ・ローカルパッケージ（node_modules/.bin）
+                        ・環境変数PATH
+                        ・npmレジストリ
+                    → そのため、ローカル・グローバル問わず、パッケージが存在しなくても使用が可能である、
+
+                ・GitHubやGistで公開されているスクリプトを実行する。
+                    npm installでもGitに存在するファイルのインストールは可能であったが、削除が面倒だった。
+                    しかしながら、自PCに保存しないためその懸念がなくなった。
+        (参照)
+            ・https://dev.classmethod.jp/articles/node-npm-npx-getting-started/
