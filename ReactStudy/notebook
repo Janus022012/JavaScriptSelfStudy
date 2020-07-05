@@ -36,7 +36,7 @@ section13: Appにコンポーネントを表示する。
 
 ### material-ui
 section6: プロジェクトファイルとリソース
-    ◆   npm install --local?
+    ◆npm install --local?
             ・npm
                 npmはパッケージマネージャであり、開発用のパッケージを管理するためのツールである。
                 npm initによって、npmが管理するディレクトとpackage.jsonが作成される。
@@ -94,3 +94,60 @@ section6: プロジェクトファイルとリソース
                     しかしながら、自PCに保存しないためその懸念がなくなった。
         (参照)
             ・https://dev.classmethod.jp/articles/node-npm-npx-getting-started/
+
+
+section10: 画像の最適化
+    ■ 画像最適化
+        1. 必ずSVGで実装する。
+            ・レスポンシブである。(拡大・縮小に対応している。)
+            ・小さい。
+            ・カスタム可能である。(プロパティをReactによって変更可能である。)
+        2. SVGが使用できない場合、JPG/PNGを使用する。
+        → PageSpeed Insightsでページの速さを確認できる。
+
+        ・解決策
+            ・Tinyjpgサイトを使用する。
+            　→ jpgを縮小する。
+            ・SVGomgサイトを使用sるう。
+            　→ svgを縮小する。
+
+section12: AppBarコンポーネント
+    ■ AppBar
+        ・Simple App Bar
+            import AppBar from "@material-ui/core/AppBar"
+        ・ToolBarはどのような効果をもたらすのか。
+            ToolBarは垂直方向ではなく、水平方向にコンポーネントを配置するために用いる。
+        ・position="fixed"について
+            デフォルトであるが、staticにすると位置が固定ではなくなり、スクロールすると消えてしまう。
+
+section13: Appbarトランジション
+    ■ Elevate App Bar
+        ・useScrollTriggerはスクロールされた時にtrueを返すトリガーである。
+            ・disableHystersisはユーザーの遅延させるか
+            ・thresholdはトリガーされたと判断する値
+        ・elevation
+            ・影の深さで0～24まである
+    ■[...new Array(1200)].map(() => "あいうえおかきくけこ").join('\n')
+        ・...はイテレータオブジェクトを展開する。
+        ・[...new Array(1200)]は1200個の要素を持つArrayを展開したArrayを作成する。
+        　(new Array(1200).mapはうまくいかない。)
+        ・mapはイテレータオブジェクトの要素を受け取り、引数を取った関数に対して処理を行う。
+        ・joinは配列内の文字列を引数の区切り文字で結合する。
+    ■ function XXX()とlet XXX = () => {}の違いについて
+        ・関数の種類
+            ・function命令()
+            ・アロー関数(変数 = () => {})
+            ・Functionコンストラクタ(変数 = new Function(引数, 関数(文字列))
+            ・関数リテラル(変数 = function(){})
+
+        ・関数リテラル(アロー関数・関数リテラル・Functionコンストラクタ)とfunction命令の違い
+            ・関数リテラル群は代入時に評価されるが、function命令はコンパイル時に評価される。
+            　そのため、以下のような事象が発生する。
+                ・function命令は宣言前に呼び出す事が可能だが、関数リテラル群はできない。
+            ・アロー関数は、アロー関数自身が宣言された場所によってthisが決定されるが、function命令だとどうやって
+            　関数が実行されるのかに依存してしまう。
+        (参照)
+            ・https://qiita.com/suin/items/a44825d253d023e31e4d
+
+
+
