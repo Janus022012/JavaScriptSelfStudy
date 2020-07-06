@@ -38,6 +38,15 @@ section14: 有効なテストファイル名
     ・*.spec.js
     ・__tests__/以下のファイル
 
+section15: テスト構造
+    it("テストの概要", テスト関数)
+
+section16: JSDOMを使ったReact
+    JSDOMはブラウザのシュミレーターである。
+
+section18: expect関数
+    expect(確かめたい要素).マッチ関数(期待する値)
+
 ### material-ui
 section6: プロジェクトファイルとリソース
     ◆npm install --local?
