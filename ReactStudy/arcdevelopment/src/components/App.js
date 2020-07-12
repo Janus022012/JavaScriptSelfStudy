@@ -1,16 +1,15 @@
 import React from 'react';
+import {ThemeProvider} from "@material-ui/styles";
 import {Header} from "./ui/Header";
+import theme from './ui/Theme'
 
 export let App = () => {
-  return (
-    <div className="App">
-      <Header />
-        {[...new Array(1200)]
-            .map(() => "あいうえおかきくけこさしすせそ", )
-            .join('\n')
-        }
-    </div>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            <Header/>
+            Hello!
+        </ThemeProvider>
+    )
 }
 
 export default App;

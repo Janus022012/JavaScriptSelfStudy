@@ -162,5 +162,44 @@ section13: Appbarトランジション
         (参照)
             ・https://qiita.com/suin/items/a44825d253d023e31e4d
 
+section14: スタイリングテーマ
+    ■　ThemeProvider
+            スタイルをテーマに統一する。
+            <ThemeProvider> </ThemeProvider>
+
+section15: スタイリングテーマ
+    ■ Material Colorの使い方
+        1, 白ベースか黒ベースのアプリかを決定する。
+        2, プライマリカラーを決定する。
+        3, アクセントカラーを決定する。
+            色相環からなるべく隣接していない箇所から選択する。
+        4, テキストカラーを決定する。
+        5, プライマリカラーの暗い色と明るい色を決定する。
+    ■ Theme
+        ・common
+            ・好きな色を定義できる。
+        ・type
+            ・ダーク・ホワイトカラーなどを定義できる。
+        ・primary
+            ・
+        ・secondary
+            ・
+        ・error
+            ・エラーが発生した時に使用する色
+        ・
+
+section16: Typography
+    ・Typography
+        テキストの見た目をカスタマイズする事が可能である。
+        ・パラメーター
+            ・fontFamily
+                フォントの種類
+            ・fontWeight
+            ・fontSize
+    ■ Linterとは
+        ・
+
+section 21: Tabの概要
+    ・<Tabs>と<Tab>を使用する。
 
 
