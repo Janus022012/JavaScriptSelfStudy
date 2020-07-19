@@ -13,7 +13,7 @@ export let App = () => {
                         {/*exactはURLが部分一致ではなく、完全一致により遷移する設定を示す。*/}
                     <Route exact path="/" component={() => <div>home</div>}/>
                     <Route exact path="/services" component={() => <div>services</div>}/>
-                    <Route exact path="/customrsoftware" component={() => <div>customsoftware</div>}/>
+                    <Route exact path="/customsoftware" component={() => <div>customsoftware</div>}/>
                     <Route exact path="/mobileapps" component={() => <div>mobileapp</div>}/>
                     <Route exact path="/websites" component={() => <div>website</div>}/>
                     <Route exact path="/revolution" component={() => <div>revolution</div>}/>
