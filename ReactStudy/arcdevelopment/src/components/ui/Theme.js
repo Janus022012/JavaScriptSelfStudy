@@ -39,8 +39,5 @@ export default createMuiTheme({
         }
     },
     mixins:{
-        toolbar: {
-            minHeight: "7em"
-        }
     }
 })
